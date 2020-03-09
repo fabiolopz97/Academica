@@ -2,6 +2,7 @@ package com.cecar.academica.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         })
 
         studentViewModel.getStudentsWithLiveData()
+        Handler().postDelayed({
+            studentViewModel.getStudentsForLocalDatabase()
+        }, 5000)
     }
 
 }
